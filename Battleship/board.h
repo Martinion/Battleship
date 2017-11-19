@@ -9,6 +9,7 @@ public:
     void printGameBoard();
     void makeBoard(int numberOfShips);
     void printPlayerBoard();
+    bool checkForShips();
     bool hit(int row, int column, int &hit);
 
 

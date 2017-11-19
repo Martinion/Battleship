@@ -28,6 +28,19 @@ void Board::makeEmptyBoard()
     }
 }
 
+bool Board::checkForShips()
+{
+    for(int i = 0; i < M; i++)
+    {
+        for(int j = 0; j < N; j++)
+        {
+            if(gameBoard[i][j] == SHIP)
+                return true;
+        }
+    }
+    return false;
+}
+
 bool Board::hit(int row, int column, int &hit)
 {
     if(row < 0 || row >= M || column < 0 || column >= N)

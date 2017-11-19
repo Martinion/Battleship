@@ -7,15 +7,7 @@ int main()
 {
     srand(time(nullptr));
 
-    Board board;
-
-    board.makeBoard(5);
-
-    board.printGameBoard();
-
-    board.printPlayerBoard();
-
     Player player;
 
-    player.play(&board);
+    player.play();
 }
