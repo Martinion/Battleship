@@ -81,19 +81,19 @@ void Player::setDifficulty()
     {
     case 1:
         numberOfShots = 30;
-        numberOfShips = 10;
+        numberOfShips = 2;
         break;
     case 2:
         numberOfShots = 20;
-        numberOfShips = 8;
+        numberOfShips = 2;
         break;
     case 3:
         numberOfShots = 10;
-        numberOfShips = 5;
+        numberOfShips = 2;
         break;
     default:
         numberOfShots = 3;
-        numberOfShips = 3;
+        numberOfShips = 1;
     }
 }
 
@@ -114,7 +114,6 @@ bool Player::yesNoMenu()
         case 'y':
         case 'Y':
             return true;
-            break;
         case 'n':
         case 'N':
             return false;

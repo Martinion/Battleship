@@ -9,12 +9,12 @@ Board::Board()
 
 int Board::randomRow()
 {
-    return rand()%M;
+    return rand()%(M-2)+1;
 }
 
 int Board::randomColumn()
 {
-    return rand()%N;
+    return rand()%(N-2)+1;
 }
 
 void Board::makeEmptyBoard()
@@ -81,11 +81,14 @@ void Board::makeBoard(int numberOfShips)
             int tempRow = randomRow();
             int tempColumn = randomColumn();
 
+            int orientation = rand()%2;
+            int orientation2 = 1 - orientation;
 
-
-            if(gameBoard[tempRow][tempColumn] == BLANK)
+            if(gameBoard[tempRow][tempColumn] == BLANK && gameBoard[tempRow + orientation][tempColumn + orientation2] == BLANK && gameBoard[tempRow - orientation][tempColumn - orientation2] == BLANK)
             {
                 gameBoard[tempRow][tempColumn] = SHIP;
+                gameBoard[tempRow + orientation][tempColumn + orientation2] = SHIP;
+                gameBoard[tempRow - orientation][tempColumn - orientation2] = SHIP;
                 shipPlaced = true;
             }
         }while(!shipPlaced);
